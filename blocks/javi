@@ -1,0 +1,7 @@
+#!/bin/bash
+
+
+  echo "off"
+  echo "off"
+  echo ""
+exit 0

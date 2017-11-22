@@ -86,17 +86,18 @@ ${goto 14}${color5}${font Droid Sans:pixelsize=9}CPU 3: ${color1}${alignc}${freq
 ${goto 14}${color5}${font Droid Sans:pixelsize=9}CPU 4: ${color1}${alignc}${freq_g 3} ${color1}Ghz ${color2}${alignr}${goto 254}${cpu cpu3}${color1}%
 ${goto 14}${alignr}${goto 14}${loadgraph 50,266 6db9d5 6db9d5 -l}
 
-${voffset 5}
+${voffset 1}
 ${goto 14}${color5}CPU${font Droid Sans:pixelsize=9}$alignr$cpu%
 ${goto 14}${font Droid Sans:pixelsize=9}$color5${top name 1}$alignr$color1${top cpu 1}%
 ${goto 14}$color5${top name 2}$alignr$color1${top cpu 2}%
 ${goto 14}$color5${top name 3}$alignr$color1${top cpu 3}%
 ${goto 14}$color5${top name 4}$alignr$color1${top cpu 4}%
 
-${voffset 5}
+${voffset 1}
 ${goto 14}${color5}${font Droid Sans:pixelsize=9}RAM: ${color1}${alignc 10}${mem}
 ${goto 14}${color5}${font Droid Sans:pixelsize=9}TOTAL: ${color1}${alignc 10}${memmax}
 ${image ~/.i3/Conky/Conky-eOS/.conky-weather-icons/separator.png -p 1,592 -s 285x2}
+
 ${goto 74}${color1}${font Open Sans Light:size=15}${alignc}Procesos
 ${goto 14}${color1}${font Droid Sans:pixelsize=9}${color5}${top_mem name 1}${color1}${alignc -10}${top_mem mem_res 1}${color2}${alignr}${goto 234}${top_mem mem 1}${color1} %
 ${goto 14}${color1}${font Droid Sans:pixelsize=9}${color5}${top_mem name 2}${color1}${alignc -10}${top_mem mem_res 2}${color2}${alignr}${goto 234}${top_mem mem 2}${color1} %
@@ -104,11 +105,13 @@ ${goto 14}${color1}${font Droid Sans:pixelsize=9}${color5}${top_mem name 3}${col
 ${goto 14}${color1}${font Droid Sans:pixelsize=9}${color5}${top_mem name 4}${color1}${alignc -10}${top_mem mem_res 4}${color2}${alignr}${goto 234}${top_mem mem 4}${color1} %
 ${goto 14}${color1}${font Droid Sans:pixelsize=9}${color5}${top_mem name 5}${color1}${alignc -10}${top_mem mem_res 5}${color2}${alignr}${goto 234}${top_mem mem 5}${color1} %
 
-${voffset 5}
-${voffset 8}$color5${font Droid Sans:size=16}${time %A}$font\
-${voffset -8}$alignr$color5${font Droid Sans:size=38}${time %e}$font
-$color${voffset -30}$color5${font Droid Sans:size=18}${time %b}$font\
-${voffset -3} $color5${font Droid Sans:size=20}${time %Y}$font$color5$hr
+${voffset 1}
 
 ${alignr}${color2}${font font Droid Sans:size=8}uptime: ${color5}${uptime_short}
-${voffset 5}${color2}${font font Droid Sans:size=8}${alignr}kernel: ${color5}${kernel}
+${voffset 1}
+${color2}${font font Droid Sans:size=8}${alignr}kernel: ${color5}${kernel}
+
+${color2}${goto 85}${font :size=8}${time %d %B %Y}
+${color5}${font RsbillsDng:size=14}${font}${font DejaVu Sans Mono:size=8}${execpi 3600 DJS=`date +%_d`; cal -m | sed '1d' | sed '/./!d' | sed 's/$/                     /' | fold -w 21 | sed -n '/^.\{21\}/p' | sed 's/^/${alignc} /' | sed /" $DJS "/s/" $DJS "/" "'${color2}'"$DJS"'${color}'" "/}${font}
+
+

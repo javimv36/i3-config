@@ -345,6 +345,29 @@ set $i3_color15         #000000
 set $i3_color16         #ffffff
 set $i3_color17         #0c0c0c
 
+
+#new color palette for my i3bar
+set $foreground   #eceff1
+set $background   #263238
+set $color0       #263238
+set $color8       #37474f
+set $color1       #ff9800
+set $color9       #ffa74d
+set $color2       #8bc34a
+set $color10      #9ccc65
+set $color3       #ffc107
+set $color11      #ffa000
+set $color4       #03a9f4
+set $color12      #81d4fa
+set $color5       #ea427b
+set $color13      #ad1457
+set $color6       #009688
+set $color14      #26a69a
+set $color7       #cfd8dc
+set $color15      #eceff1
+set $transparent #000000FF
+
+
 # Start i3bar to display a workspace bar (plus the system information i3status if available)
 bar {
 	status_command i3blocks -c ~/.i3/i3blocks.conf
@@ -361,16 +384,28 @@ bar {
 	strip_workspace_numbers yes
 
 	colors {
+
+        background #24364F
+        statusline #CCCCCC
+        separator #556270
+
+        focused_workspace  #ffffff #285577
+        active_workspace   #cccccc #333333
+        inactive_workspace #999999 #222222
+        urgent_workspace #ffffff #900000
+
+
 #       background $transparent
-        background $i3_background
-        statusline $i3_text
-        separator  $i3_separator
+#        background $i3_background
+#        statusline $i3_text
+#        separator  $i3_separator
 
 #                                  border  backgr. text
-        focused_workspace   $i3_color1  $i3_color4  $i3_text
-        active_workspace    $i3_color2  $i3_color3  $i3_color5
-        inactive_workspace  $i3_color2  $i3_color3  $i3_color6
-        urgent_workspace    $i3_color4  $i3_color5  $i3_color7
+#        focused_workspace   $i3_color1  $i3_color4  $i3_text
+#        active_workspace    $i3_color2  $i3_color3  $i3_color5
+#        inactive_workspace  $i3_color2  $i3_color3  $i3_color6
+#        urgent_workspace    $i3_color4  $i3_color5  $i3_color7
+
     }
 }
 

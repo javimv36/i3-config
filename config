@@ -27,8 +27,8 @@ font xft:Roboto Mono for Powerline 12
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec terminal
-
+#bindsym $mod+Return exec terminal
+bindsym $mod+Return exec urxvt -fn "xft:ProFont For Powerline:pixelsize=18"
 # kill focused window
 bindsym $mod+Shift+q kill
 
